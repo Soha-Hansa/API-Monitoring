@@ -1,0 +1,65 @@
+I would divide your 8 days like this
+
+Day 1 — Backend foundation
+
+Final folder structure
+FastAPI setup
+Database setup
+API registration
+Basic models
+
+Day 2 — Monitoring engine
+
+Background monitoring
+Health checks
+Status code
+Latency
+Store metrics
+
+Day 3 — Detection engine
+
+API Down
+High Latency
+Error Spike
+Threshold configuration
+Incident creation
+
+Day 4 — Incident management
+
+Incident model
+Incident history
+Severity calculation
+Recent metrics/events collection
+Detection → incident pipeline
+
+Day 5 — Redis + correlation
+
+Redis monitoring
+Basic Redis metrics
+Correlate Redis degradation with API degradation
+Demo scenario
+
+Day 6 — AI Analyzer
+
+Incident context → LLM
+Structured AI response
+Probable cause
+Severity
+Explanation
+Recommended actions
+
+Day 7 — Integration + testing
+
+Connect all backend components
+Test failure scenarios
+Connect APIs for React
+Fix edge cases
+
+Day 8 — Polish / buffer
+
+Improve detection reliability
+Clean API responses
+Documentation
+Environment variables
+Final backend demo
+Buffer for unexpected problems
