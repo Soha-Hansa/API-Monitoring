@@ -13,3 +13,11 @@ class MonitoredAPI(Base):
     is_active=Column(Boolean,default=True)
     created_at=Column(DateTime,default=datetime.now)
 
+class APIHealthCheck(Base):
+    __tablename__ = "api_health_checks"
+    id=Column(Integer,primary_key=True,index=True)
+    api_id=Column(Integer)
+    status_code=Column(Integer)
+    latency=Column(Float)
+    is_success=Column(Boolean)
+    checked_at=Column(DateTime,default=datetime.now)

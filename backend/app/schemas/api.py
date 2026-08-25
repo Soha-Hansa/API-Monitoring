@@ -14,4 +14,14 @@ class APIBase(BaseModel):
     name: str
     url: str
     latency_threshold: float
-    error_threshold: float
+    error_threshold: float
+    
+class HealthCheckResponse(BaseModel):
+    id: int
+    api_id: int
+    status_code: int | None
+    latency: float | None
+    is_success: bool
+    checked_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)

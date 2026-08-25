@@ -1,0 +1,56 @@
+API Monitoring Project - Codebase Map
+======================================
+
+This file contains the paths of all Python files in the backend and the functions/classes defined inside them.
+
+1. backend/app/main.py
+   - Path: backend/app/main.py
+   - Functions:
+     * home()
+       - Description: Returns a home/status message ("everything works fine") as a root GET endpoint.
+
+2. backend/app/api/routes/apis.py
+   - Path: backend/app/api/routes/apis.py
+   - Functions:
+     * create_api(api: APIBase, db: Session = Depends(get_db))
+       - Description: POST endpoint to register a new API for monitoring and save it to the SQLite database.
+
+3. backend/app/apis/routes/apis.py
+   - Path: backend/app/apis/routes/apis.py
+   - Functions:
+     * create_api(api: APIBase, db: Session = Depends(get_db))
+       - Description: POST endpoint to register a new API (duplicate/backup route file).
+
+4. backend/app/db/database.py
+   - Path: backend/app/db/database.py
+   - Functions:
+     * get_db()
+       - Description: FastAPI dependency that yields a database session and closes it when the request is done.
+
+5. backend/app/db/models.py
+   - Path: backend/app/db/models.py
+   - Classes:
+     * MonitoredAPI(Base)
+       - Description: SQLAlchemy database model representing the 'monitored_apis' table.
+     * APIHealthCheck(Base)
+       - Description: SQLAlchemy database model representing the 'api_health_checks' table.
+
+
+6. backend/app/schemas/api.py
+   - Path: backend/app/schemas/api.py
+   - Classes:
+     * APIBase(BaseModel)
+       - Description: Pydantic schema used for API creation input validation.
+     * APIResponse(BaseModel)
+       - Description: Pydantic schema used for serializing database model responses.
+
+7. backend/app/Services/health_checker.py
+   - Path: backend/app/Services/health_checker.py
+   - Functions:
+     * check_api(url)
+       - Description: Synchronously requests the target URL using httpx, calculating response time/latency and success status.
+
+8. backend/app/Services/monitor_service.py
+   - Path: backend/app/Services/monitor_service.py
+   - Functions/Classes:
+     * None (Empty file)
