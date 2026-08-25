@@ -20,4 +20,15 @@ class APIHealthCheck(Base):
     status_code=Column(Integer)
     latency=Column(Float)
     is_success=Column(Boolean)
-    checked_at=Column(DateTime,default=datetime.now)
+    checked_at=Column(DateTime,default=datetime.now)
+
+class Incident(Base):
+    __tablename__ = "incidents"
+    id=Column(Integer,primary_key=True, index=True)
+    api_id=Column(Integer)
+    incident_type=Column(String)
+    severity=Column(String)
+    message=Column(String)
+    status=Column(String)
+    created_at=Column(DateTime,default=datetime.now)
+    resolved_at = Column(DateTime, nullable=True)

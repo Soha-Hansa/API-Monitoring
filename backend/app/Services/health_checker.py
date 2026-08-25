@@ -9,7 +9,7 @@ def check_api(url):
         response = httpx.get(url, timeout=5)
 
         end = time.perf_counter()
-        latency = end - start
+        latency = (end - start)*1000
         status_code = response.status_code
         is_success = 200 <= status_code < 300
 
@@ -22,7 +22,7 @@ def check_api(url):
     except (httpx.ConnectError, httpx.TimeoutException):
 
         end = time.perf_counter()
-        latency = end - start
+        latency = (end - start)*1000
 
         return {
             "status_code": None,
